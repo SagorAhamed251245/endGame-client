@@ -1,14 +1,23 @@
 import { useState } from "react";
 import NavLinks from "./NavLinks";
 import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
+  const handleClick = () => {
+    setClicked(true);
+    toggleMobileMenu();
+    setTimeout(() => {
+      setClicked(false);
+    }, 500); // Adjust the timeout value to control the animation duration
+  };
   return (
-    <nav className="bg-blue-500 p-4">
+    <nav className="bg-blue-500 p-4 ">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -22,20 +31,12 @@ const Navbar = () => {
               className="text-white focus:outline-none"
               onClick={toggleMobileMenu}
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
-              </svg>
+              <GiHamburgerMenu
+                onClick={handleClick}
+                className={`w-6 h-6 :animate-spin ${
+                  clicked && "animate-spin "
+                }`}
+              ></GiHamburgerMenu>
             </button>
           </div>
 
@@ -47,7 +48,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-2 space-y-2">
+          <div className="md:hidden mt-2 space-y-2  ">
             <NavLinks></NavLinks>
           </div>
         )}
