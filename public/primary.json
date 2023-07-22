@@ -1,0 +1,44 @@
+[
+  {
+    "college_image": "https://www.timeshighereducation.com/student/sites/default/files/styles/default/public/james_madison_university.jpg?itok=rzNh-kr_",
+    "college_name": "University of Science and Technology",
+    "admission_dates": "2023-08-15 to 2023-09-30",
+    "events": [
+      {
+        "event_name": "Orientation Day",
+        "event_date": "2023-09-05",
+        "event_description": "The Orientation Day is a special event designed to welcome and introduce new students to the campus life at the University of Science and Technology. It provides an opportunity for incoming students to familiarize themselves with the university's facilities, meet faculty members, and connect with their peers. The event will take place in the university's spacious auditorium, where various presentations and interactive sessions will be conducted to ease the transition into university life."
+      },
+      {
+        "event_name": "Science Fair",
+        "event_date": "2023-10-20",
+        "event_description": "The Science Fair is an annual event that serves as a platform for students and faculty members to showcase their research projects and scientific innovations. It celebrates the spirit of inquiry and intellectual curiosity that drives the university's community. The fair will be held in the campus expo center, where participants will present their projects through exhibits, demonstrations, and discussions. This event provides a unique opportunity for attendees to explore cutting-edge research across diverse disciplines and foster interdisciplinary collaborations."
+      }
+    ],
+    "research_history": "Founded in 1950, the university has a rich history of groundbreaking research.",
+   
+    "admission_process": "Prospective students need to submit an online application and appear for an entrance exam.",
+    "research_works": "The University of Science and Technology is recognized for its significant contributions to research across various fields. The faculty and students actively engage in pioneering studies in areas such as physics, biology, computer science, engineering, and more. Through well-funded research initiatives and state-of-the-art facilities, the university continues to push the boundaries of knowledge and make a positive impact on society. The research history of the institution showcases a legacy of groundbreaking discoveries that have left a lasting mark on their respective fields.",
+    "sports": {
+        "team": [
+            {
+                "sport_name": "Basketball",
+                "team_count": 2,
+                "players_per_team": 10
+            },
+            {
+                "sport_name": "Soccer",
+                "team_count": 3,
+                "players_per_team": 11
+            }
+        ],
+        "individual": [
+            "tennis",
+            "athletics",
+            "swimming"
+        ]
+    }
+   
+  }
+
+]
