@@ -1,17 +1,7 @@
-import { useEffect, useState } from "react";
 import SectionTitle from "../../../components/SectionTitle";
 import GalleryImg from "./GalleryImg";
 
 const Gallery = () => {
-  const [galleryPhotos, setGalleryPhotos] = useState([]);
-
-  useEffect(() => {
-    fetch("https://mah-heros-server.vercel.app/galleryPhotos")
-      .then((res) => res.json())
-      .then((data) => setGalleryPhotos(data));
-  }, [galleryPhotos]);
-  console.log(galleryPhotos);
-
   return (
     <>
       <SectionTitle>GalleryPhotos</SectionTitle>
