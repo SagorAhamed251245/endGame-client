@@ -17,8 +17,8 @@ const Navbar = () => {
     }, 500); // Adjust the timeout value to control the animation duration
   };
   return (
-    <nav className="bg-blue-500 p-4 ">
-      <div className="container mx-auto">
+    <nav className="bg-blue-500 p-4 w-full">
+      <div className="container mx-auto ">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-white font-bold text-xl">

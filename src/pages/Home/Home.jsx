@@ -1,11 +1,12 @@
 import CollegeCard from "./CollegeCard/CollegeCard";
 
 const Home = () => {
-    return (
-        <div>
-            <CollegeCard></CollegeCard>
-        </div>
-    );
+  return (
+    <>
+      <CollegeCard></CollegeCard>
+      <div></div>
+    </>
+  );
 };
 
 export default Home;
