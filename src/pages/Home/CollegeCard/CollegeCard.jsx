@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SectionTitle from "../../../components/SectionTitle";
 
 const CollegeCard = () => {
     const [Colleges, setColleges] = useState([])
@@ -10,6 +11,8 @@ const CollegeCard = () => {
     console.log(Colleges);
     return (
         <div>
+            <SectionTitle>Colleges Card</SectionTitle>
+            
             
         </div>
     );
