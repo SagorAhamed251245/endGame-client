@@ -5,7 +5,7 @@ import ResearchPaper from "./ResearchPaper/ResearchPaper";
 const Home = () => {
   return (
     <>
-      <CollegeCard></CollegeCard>
+      <CollegeCard slice={[0,3]}></CollegeCard>
       <Gallery></Gallery>
       <ResearchPaper></ResearchPaper>
     </>
