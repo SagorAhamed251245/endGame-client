@@ -8,7 +8,12 @@ export const AdmissionColleges = (info) => {
     .then((response) => console.log(response))
     .catch((err) => console.log(err));
 };
-
+export const ReviewColleges = (info, id) => {
+    axios
+      .patch(`${import.meta.env.VITE_apiUrl}/reviews/${id}`, info)
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err));
+  };
 export const GetAdmittedColleges = () => {
   const { user } = useContext(AuthContext);
   const [AdmittedColleges, setAdmittedColleges] = useState([]);
