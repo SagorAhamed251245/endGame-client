@@ -5,7 +5,7 @@ import axios from "axios";
 
 const CollegesApi = () => {
     const { user, loading } = useContext(AuthContext);
-    console.log(user);
+   
 
     
     const { refetch, data: AllColleges = [] } = useQuery({

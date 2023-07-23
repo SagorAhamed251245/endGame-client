@@ -21,7 +21,7 @@ const Register = () => {
     
       createUser(email, password)
         .then((result) => {
-          console.log(result.user);
+          ;
           setUserProfile(name, photo);
           navigate("/")
         
@@ -36,7 +36,7 @@ const Register = () => {
     singinWithGoogle()
       .then((result) => {
         // setNewUser(result.user);
-        console.log(result);
+        ;
       })
       .catch((error) => {
         console.log(error.message);

@@ -12,7 +12,7 @@ const CollegeCard = () => {
       setColleges(res.data)
     );
   }, []);
-  console.log(colleges);
+ 
   return (
     <>
       <SectionTitle>Colleges Card</SectionTitle>
@@ -66,7 +66,7 @@ const CollegeCard = () => {
             {/* btn */}
             <div className="">
               <button className="px-3 py-2 bg-sky-500 rounded font-bold mt-5 hover:bg-sky-400 hover:text-white duration-500">
-                <Link to={`college/${college.college_name}`}>View more</Link>
+                <Link to={`/college/${college._id}`}>View more</Link>
               </button>
             </div>
           </div>

@@ -20,7 +20,7 @@ const Login = () => {
 
     singInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        ;
         SetUser(result.user);
         navigate("/");
       })
@@ -34,7 +34,7 @@ const Login = () => {
       .then((result) => {
         SetUser(result.user);
         // setNewUser(result.user);
-        console.log(result);
+       ;
       })
       .catch((error) => {
         console.log(error.message);

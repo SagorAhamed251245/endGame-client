@@ -21,6 +21,12 @@ export const router = createBrowserRouter([
         element: <Colleges></Colleges>,
       },
       {
+        path: '/college/:id',
+        element: <CollegesDetails></CollegesDetails>,
+        loader: ({params}) => fetch(`${import.meta.env.VITE_apiUrl}/college/${params.id}`)
+
+      },
+      {
         path: "/admission",
         element: <Admission></Admission>,
       },
