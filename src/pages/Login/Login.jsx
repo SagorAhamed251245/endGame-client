@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { setUser } from "../../api/userApi";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ const Login = () => {
   const handelGoogleSingin = () => {
     singinWithGoogle()
       .then((result) => {
+        setUser(result.user);
         // setNewUser(result.user);
         console.log(result);
       })
