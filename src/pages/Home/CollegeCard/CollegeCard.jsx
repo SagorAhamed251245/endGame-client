@@ -17,10 +17,10 @@ const CollegeCard = () => {
     <>
       <SectionTitle>Colleges Card</SectionTitle>
       <div className="grid gap-4 lg:grid-cols-3 mt-4 w-[90%] mx-auto">
-        {colleges.map((college, index) => (
+        {colleges.slice(0,3).map((college, index) => (
           <div
             key={index}
-            className=" rounded-lg flex flex-col shadow-md p-4 h-[700px] bg-red-200"
+            className=" rounded-lg flex flex-col shadow-md p-4 h-[700px] "
           >
             <img
               src={college.college_image}

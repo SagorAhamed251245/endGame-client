@@ -9,6 +9,6 @@ export const SetUser = (user) => {
   };
   axios
     .put(`${import.meta.env.VITE_apiUrl}/users/${user.email}`, newUser)
-    .then((response) => )
+    .then((response) => {} )
     .catch((err) => console.log(err));
 }; // newUser is removed from the dependencies array
