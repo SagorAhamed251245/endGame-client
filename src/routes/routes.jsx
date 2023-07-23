@@ -5,6 +5,8 @@ import Colleges from "../pages/Colleges/Colleges";
 import Admission from "../pages/Admission/Admission";
 import MyCollege from "../pages/MyCollege/MyCollege";
 import CollegesDetails from "../pages/Home/CollegeCard/CollegesDetails/CollegesDetails";
+import Register from "../pages/Singup/Register";
+import Login from "../pages/Login/Login";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -32,4 +34,13 @@ export const router = createBrowserRouter([
       }
     ],
   },
+  {
+    path: '/singup',
+    element: <Register></Register>
+  },
+  {
+    path:"/login",
+    element: <Login></Login>
+
+  }
 ]);

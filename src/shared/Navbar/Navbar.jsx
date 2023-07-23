@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import NavLinks from "./NavLinks";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -43,6 +45,10 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-4">
             <NavLinks></NavLinks>
+            <NavLink to="login"> Login</NavLink>
+            <NavLink to="singup">Sing Up</NavLink>
+            <NavLink>{user?.displayName}</NavLink>
+            <NavLink onClick={() => logOut()}>Log out</NavLink>
           </div>
         </div>
 
