@@ -35,5 +35,185 @@
       ],
       "individual": ["tennis", "athletics", "swimming"]
     }
+  },
+  {
+    "id": 2,
+    "college_image": "https://thecollegepost.com/wp-content/uploads/2021/02/Cambridge-University-UK.jpg",
+    "college_name": "Howlend Science and Technology University",
+    "admission_dates": "2023-08-20 to 2023-10-10",
+    "events": [
+      {
+        "event_name": "Open House",
+        "event_date": "2023-09-12",
+        "event_description": "The Open House event at Howlend Science and Technology University welcomes prospective students and their families to explore the campus and learn more about the university's programs. Faculty members and current students will be available to answer questions and provide insights into the academic and extracurricular opportunities available at the university. The event is designed to help students make informed decisions about their higher education journey."
+      },
+      {
+        "event_name": "Career Fair",
+        "event_date": "2023-10-05",
+        "event_description": "The Career Fair is an annual event that brings together top employers and students from various disciplines. It offers an excellent networking platform for students to connect with potential employers and explore internship and job opportunities. The fair will have booths from companies across different industries, as well as workshops and seminars on career development. Howlend Science and Technology University takes pride in its successful placement record, and the Career Fair plays a vital role in fostering meaningful connections between students and employers."
+      }
+    ],
+    "research_history": "Howlend Science and Technology University was established in 1965, and since then, it has been a hub of research excellence.",
+    "admission_process": "Prospective students need to complete an online application and may be required to participate in an admission interview.",
+    "research_works": "At Howlend Science and Technology University, research is at the heart of the academic experience. The university supports a diverse range of research endeavors, from fundamental research to applied projects with real-world impact. Faculty members collaborate with students to explore cutting-edge ideas and address societal challenges. The institution's research history is marked by groundbreaking discoveries in areas such as environmental science, social sciences, economics, and more.",
+    "sports": {
+      "team": [
+        {
+          "sport_name": "Volleyball",
+          "team_count": 2,
+          "players_per_team": 6
+        },
+        {
+          "sport_name": "Baseball",
+          "team_count": 1,
+          "players_per_team": 9
+        }
+      ],
+      "individual": ["badminton", "golf", "table tennis"]
+    }
+  },
+  {
+    "id": 3,
+    "college_image": "https://static.studyin-uk.com/assets/study-guide/cambridge-university.jpg",
+    "college_name": "City University",
+    "admission_dates": "2023-09-01 to 2023-10-15",
+    "events": [
+      {
+        "event_name": "Freshers' Welcome",
+        "event_date": "2023-09-25",
+        "event_description": "The Freshers' Welcome event at City University is an exciting day of activities and celebrations to welcome new students to the university community. It includes interactive sessions, campus tours, cultural performances, and opportunities to meet faculty members and fellow students. The event aims to create a friendly and inclusive atmosphere for freshmen, helping them feel at home and engaged from the very beginning of their academic journey."
+      },
+      {
+        "event_name": "Tech Expo",
+        "event_date": "2023-10-08",
+        "event_description": "The Tech Expo is an annual event at City University that showcases the latest advancements in technology and innovation. Students, faculty, and industry professionals come together to present their tech projects, research findings, and prototypes. The expo features various interactive exhibits, workshops, and keynote presentations from renowned experts in the tech industry. It offers a platform for networking and exploring career opportunities in the tech sector."
+      }
+    ],
+    "research_history": "City University has a proud history of research excellence and has been at the forefront of groundbreaking discoveries.",
+    "admission_process": "Prospective students are required to submit an online application and may need to take an admission test based on their chosen program.",
+    "research_works": "At City University, research is driven by curiosity and innovation. Faculty members and students collaborate on research projects that address societal challenges and advance knowledge in various fields. The university is particularly known for its contributions to fields such as artificial intelligence, environmental studies, urban planning, and public health. Its research history reflects a commitment to making a positive impact on the world through transformative research.",
+    "sports": {
+      "team": [
+        {
+          "sport_name": "Hockey",
+          "team_count": 1,
+          "players_per_team": 11
+        },
+        {
+          "sport_name": "Cricket",
+          "team_count": 2,
+          "players_per_team": 11
+        }
+      ],
+      "individual": ["swimming", "badminton", "squash"]
+    }
+  },
+  {
+    "id": 4,
+    "college_image": "https://www.troy.edu/_assets/sharing/troy-campus.jpg",
+    "college_name": "University of Arts and Humanities",
+    "admission_dates": "2023-08-25 to 2023-10-20",
+    "events": [
+      {
+        "event_name": "Art Festival",
+        "event_date": "2023-09-10",
+        "event_description": "The Art Festival is a vibrant celebration of creativity and artistic expression at the University of Arts and Humanities. It features art exhibitions, live performances, workshops, and interactive sessions with renowned artists. The festival brings together students, faculty, and art enthusiasts to appreciate various forms of art and explore the power of artistic storytelling and innovation."
+      },
+      {
+        "event_name": "Literary Symposium",
+        "event_date": "2023-10-15",
+        "event_description": "The Literary Symposium is an intellectual gathering of writers, scholars, and students to discuss literature's role in shaping society. It includes panel discussions, book launches, poetry readings, and writing workshops. The symposium provides a platform for exploring diverse literary traditions and their impact on cultural identity and social change."
+      }
+    ],
+    "research_history": "The University of Arts and Humanities fosters an environment that encourages artistic research and critical thinking.",
+    "admission_process": "Prospective students need to submit a portfolio or attend an audition/interview, depending on their chosen arts discipline.",
+    "research_works": "Research at the University of Arts and Humanities is deeply intertwined with creative practices. Faculty members and students engage in interdisciplinary research that blurs the boundaries between art, culture, and society. Their work explores contemporary issues through various art forms, including visual arts, performing arts, literature, and media studies.",
+    "sports": {
+      "team": [
+        {
+          "sport_name": "Dance",
+          "team_count": 1,
+          "players_per_team": 12
+        },
+        {
+          "sport_name": "Theater",
+          "team_count": 1,
+          "players_per_team": 10
+        }
+      ],
+      "individual": ["paintball", "yoga", "archery"]
+    }
+  },
+  {
+    "id": 5,
+    "college_image": "https://www.usnews.com/dims4/USNEWS/6c797d0/17177859217/resize/800x540%3E/quality/85/?url=https%3A%2F%2Fwww.usnews.com%2Fcmsmedia%2F21%2F5a%2Fcf871a134def9eb76eeaf37ba49e%2Fjmh-drone-halloflanguages-summer-00001.jpg",
+    "college_name": "Science and Technology University",
+    "admission_dates": "2023-08-20 to 2023-10-15",
+    "events": [
+      {
+        "event_name": "Tech Expo",
+        "event_date": "2023-09-05",
+        "event_description": "The Tech Expo at Science and Technology University brings together students, faculty, and industry professionals to showcase innovative technologies and research findings. The expo features projects in robotics, artificial intelligence, cybersecurity, and more. Attendees have the opportunity to interact with cutting-edge technology and learn about the university's contributions to advancements in science and engineering."
+      },
+      {
+        "event_name": "Innovation Challenge",
+        "event_date": "2023-10-10",
+        "event_description": "The Innovation Challenge is an annual competition that encourages students to develop creative solutions to real-world problems. Participating teams present their projects to a panel of judges, including industry experts and academics. The challenge fosters a culture of innovation and entrepreneurship, inspiring students to apply their knowledge and skills to address societal challenges."
+      }
+    ],
+    "research_history": "Science and Technology University is committed to research excellence and has played a crucial role in advancing scientific knowledge.",
+    "admission_process": "Prospective students need to pass an entrance exam and may have to attend an admission interview depending on their chosen program.",
+    "research_works": "Research is at the core of the mission at Science and Technology University. Faculty members and students collaborate on research projects that range from fundamental research to applied studies with practical applications. The university's research history includes breakthroughs in areas such as renewable energy, nanotechnology, bioinformatics, and space exploration.",
+    "sports": {
+      "team": [
+        {
+          "sport_name": "Robotics",
+          "team_count": 1,
+          "players_per_team": 4
+        },
+        {
+          "sport_name": "Esports",
+          "team_count": 2,
+          "players_per_team": 5
+        }
+      ],
+      "individual": ["cycling", "rock climbing", "gymnastics"]
+    }
+  },
+  {
+    "id": 6,
+    "college_image": "https://www.belmont.edu/_assets/img/home/headervideo-homepage.jpg",
+    "college_name": "Business School University",
+    "admission_dates": "2023-09-01 to 2023-10-30",
+    "events": [
+      {
+        "event_name": "Business Expo",
+        "event_date": "2023-09-18",
+        "event_description": "The Business Expo at Business School University is an industry showcase featuring top businesses, startups, and entrepreneurs. Students have the opportunity to network with professionals, attend seminars on business trends, and explore internship and job opportunities. The expo provides valuable insights into the corporate world and fosters connections between students and potential employers."
+      },
+      {
+        "event_name": "Entrepreneurship Summit",
+        "event_date": "2023-10-25",
+        "event_description": "The Entrepreneurship Summit is a flagship event that celebrates innovation and entrepreneurial spirit. It features keynote talks by successful entrepreneurs, panel discussions on startup challenges, and workshops on business plan development. The summit empowers students with the knowledge and skills to launch their ventures and promotes a culture of entrepreneurship within the university community."
+      }
+    ],
+    "research_history": "While focused on business education, Business School University also supports research on topics related to management, economics, and finance.",
+    "admission_process": "Prospective students need to submit an online application and may have to participate in a group discussion or interview for certain programs.",
+    "research_works": "Research at Business School University includes studies on market trends, consumer behavior, corporate governance, and sustainable business practices. Faculty members collaborate with industry partners to address practical challenges faced by businesses. The university's research initiatives aim to contribute to evidence-based decision-making and foster a deeper understanding of the dynamics of the business world.",
+    "sports": {
+      "team": [
+        {
+          "sport_name": "Basketball",
+          "team_count": 2,
+          "players_per_team": 5
+        },
+        {
+          "sport_name": "Volleyball",
+          "team_count": 1,
+          "players_per_team": 6
+        }
+      ],
+      "individual": ["golf", "swimming", "table tennis"]
+    }
   }
 ]

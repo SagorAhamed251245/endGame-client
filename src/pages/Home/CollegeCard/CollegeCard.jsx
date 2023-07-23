@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import SectionTitle from "../../../components/SectionTitle";
 import { Link } from "react-router-dom";
 
+import axios from "axios";
+
 const CollegeCard = () => {
   const [colleges, setColleges] = useState([]);
+
   useEffect(() => {
-    fetch("primary.json")
-      .then((res) => res.json())
-      .then((data) => setColleges(data));
+    axios(`${import.meta.env.VITE_apiUrl}/colleges`).then((res) =>
+      setColleges(res.data)
+    );
   }, []);
   console.log(colleges);
   return (

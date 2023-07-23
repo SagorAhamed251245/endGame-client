@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { setUser } from "../../api/userApi";
+import { SetUser } from "../../api/userApi";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Login = () => {
     singInUser(email, password)
       .then((result) => {
         console.log(result.user);
-
+        SetUser(result.user);
         navigate("/");
       })
       .catch((error) => {
@@ -32,7 +32,7 @@ const Login = () => {
   const handelGoogleSingin = () => {
     singinWithGoogle()
       .then((result) => {
-        setUser(result.user);
+        SetUser(result.user);
         // setNewUser(result.user);
         console.log(result);
       })
