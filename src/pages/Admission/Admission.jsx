@@ -30,7 +30,7 @@ const Admission = () => {
               />
             </div>
             <div className="text-2xl font-semibold  mt-5">
-              <Link className="hover:underline hover:text-sky-500">{college.college_name}</Link>
+              <Link to={`/admission/fromfillup`} state={college} className="hover:underline hover:text-sky-500">{college.college_name}</Link>
             </div>
           </div>
         ))}
