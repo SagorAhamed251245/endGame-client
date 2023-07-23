@@ -9,16 +9,15 @@ export const AdmissionColleges = (info) => {
     .catch((err) => console.log(err));
 };
 
-
 export const GetAdmittedColleges = () => {
-    const { user } = useContext(AuthContext);
-    const [AdmittedColleges, setAdmittedColleges] = useState(null);
- 
-    useEffect(() => {
-      axios(`${import.meta.env.VITE_apiUrl}/admitted/${user?.email}`)
-        .then((response) => setAdmittedColleges(response.data))
-        .catch((err) => console.log(err));
-    }, [user?.email]);
-   console.log(AdmittedColleges);
-    return [AdmittedColleges, user];
-  };
+  const { user } = useContext(AuthContext);
+  const [AdmittedColleges, setAdmittedColleges] = useState([]);
+
+  useEffect(() => {
+    axios(`${import.meta.env.VITE_apiUrl}/admitted/${user?.email}`)
+      .then((response) => setAdmittedColleges(response.data))
+      .catch((err) => console.log(err));
+  }, [user?.email]);
+  console.log(AdmittedColleges);
+  return [AdmittedColleges, user];
+};

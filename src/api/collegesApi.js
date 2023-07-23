@@ -1,24 +1,18 @@
-import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
-import { useQuery } from '@tanstack/react-query';
+import { useEffect, useState } from "react";
+
 import axios from "axios";
 
 const CollegesApi = () => {
-    const { user, loading } = useContext(AuthContext);
-   
+  const [AllColleges, setAllColleges] = useState([]);
 
-    
-    const { refetch, data: AllColleges = [] } = useQuery({
-        queryKey: [`MyClass`],
-        enabled: !loading,
-        queryFn: async () => {
-            const res = await axios(`${import.meta.env.VITE_apiUrl}/colleges`)
-           
-            return res.data;
-        },
-    })
+  useEffect(() => {
+    axios(`${import.meta.env.VITE_apiUrl}/colleges`)
+      .then((response) => setAllColleges(response.data))
+      .catch((err) => console.log(err));
+  }, []);
+  
 
-    return [AllColleges, refetch]
+  return [AllColleges];
 };
 
 export default CollegesApi;
