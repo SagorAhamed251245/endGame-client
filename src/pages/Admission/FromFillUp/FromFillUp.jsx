@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { GetUser } from "../../../api/userApi";
 import { useForm } from "react-hook-form";
-import { AdmissionClass } from "../../../api/admitionApi";
+import {  AdmissionColleges } from "../../../api/admitionApi";
 
 const FromFillUp = () => {
   const location = useLocation();
@@ -21,7 +21,7 @@ const FromFillUp = () => {
       college_id: _id,
       userId: findUser?._id,
     };
-    AdmissionClass(fromData);
+    AdmissionColleges(fromData);
   };
   console.log(errors);
 
