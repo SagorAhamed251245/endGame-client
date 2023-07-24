@@ -19,7 +19,7 @@ const Navbar = () => {
     }, 500); // Adjust the timeout value to control the animation duration
   };
   return (
-    <nav className="bg-blue-500 p-4 w-full top-0 sticky z-10">
+    <nav className="bg-sky-500 p-4 w-full top-0 sticky z-10">
       <div className="container mx-auto ">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -45,10 +45,18 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-4">
             <NavLinks></NavLinks>
-            <NavLink to="login"> Login</NavLink>
-            <NavLink to="singup">Sing Up</NavLink>
-            <NavLink to={"/profile"}>{user?.displayName}</NavLink>
-            <NavLink onClick={() => logOut()}>Log out</NavLink>
+
+            {user?.email ? (
+              <>
+                <NavLink to={"/profile"}>{user?.displayName}</NavLink>
+                <NavLink onClick={() => logOut()}>Log out</NavLink>{" "}
+              </>
+            ) : (
+              <>
+                <NavLink to="login"> Login</NavLink>
+                <NavLink to="singup">Sing Up</NavLink>
+              </>
+            )}
           </div>
         </div>
 

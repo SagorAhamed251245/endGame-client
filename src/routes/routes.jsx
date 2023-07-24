@@ -11,11 +11,14 @@ import FromFillUp from "../pages/Admission/FromFillUp/FromFillUp";
 import Profile from "../pages/profile/Profile";
 import UpdatedProfile from "../pages/profile/UpdatedProfile";
 import ForgetPass from "../pages/ForgetPass/ForgetPass";
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/Error/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -27,33 +30,61 @@ export const router = createBrowserRouter([
       },
       {
         path: "/college/:id",
-        element: <CollegesDetails></CollegesDetails>,
+        element: (
+          <PrivateRoute>
+            <CollegesDetails></CollegesDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_apiUrl}/college/${params.id}`),
       },
       {
         path: "/admission",
-        element: <Admission></Admission>,
+        element: (
+          <PrivateRoute>
+            <Admission></Admission>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/admission/fromfillup",
-        element: <FromFillUp></FromFillUp>,
+        element: (
+          <PrivateRoute>
+            <FromFillUp></FromFillUp>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myCollege",
-        element: <MyCollege></MyCollege>,
+        element: (
+          <PrivateRoute>
+            <MyCollege></MyCollege>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/college/:id",
-        element: <CollegesDetails></CollegesDetails>,
+        element: (
+          <PrivateRoute>
+            <CollegesDetails></CollegesDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/profile",
-        element: <Profile></Profile>,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/editProfile",
-        element: <UpdatedProfile></UpdatedProfile>,
+        element: (
+          <PrivateRoute>
+            <UpdatedProfile></UpdatedProfile>
+          </PrivateRoute>
+        ),
       },
     ],
   },
@@ -66,9 +97,7 @@ export const router = createBrowserRouter([
     element: <Login></Login>,
   },
   {
-    
-      path: "/resetPass",
-      element: <ForgetPass></ForgetPass>,
-    
-  }
+    path: "/resetPass",
+    element: <ForgetPass></ForgetPass>,
+  },
 ]);

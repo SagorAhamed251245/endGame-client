@@ -97,7 +97,7 @@ const Login = () => {
               Have an account?{" "}
               <Link
                 to="/singup"
-                className="text-pink-500 hover:underline dark:text-pink-500"
+                className="text-sky-500 hover:underline dark:text-pink-500"
               >
                 Sing Up
               </Link>
