@@ -48,13 +48,34 @@ const Navbar = () => {
 
             {user?.email ? (
               <>
-                <NavLink to={"/profile"}>{user?.displayName}</NavLink>
-                <NavLink onClick={() => logOut()}>Log out</NavLink>{" "}
+                <NavLink
+                  className="block text-white hover:underline"
+                  to={"/profile"}
+                >
+                  {user?.displayName}
+                </NavLink>
+                <NavLink
+                  className="block text-white hover:underline"
+                  onClick={() => logOut()}
+                >
+                  Log out
+                </NavLink>{" "}
               </>
             ) : (
               <>
-                <NavLink to="login"> Login</NavLink>
-                <NavLink to="singup">Sing Up</NavLink>
+                <NavLink
+                  className="block text-white hover:underline"
+                  to="login"
+                >
+                  {" "}
+                  Login
+                </NavLink>
+                <NavLink
+                  className="block text-white hover:underline"
+                  to="singup"
+                >
+                  Sing Up
+                </NavLink>
               </>
             )}
           </div>
