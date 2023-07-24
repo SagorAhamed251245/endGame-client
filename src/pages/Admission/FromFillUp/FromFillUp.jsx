@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { GetUser } from "../../../api/userApi";
 import { useForm } from "react-hook-form";
-import {  AdmissionColleges } from "../../../api/admitionApi";
+import { AdmissionColleges } from "../../../api/admitionApi";
 
 const FromFillUp = () => {
   const location = useLocation();
@@ -13,15 +13,24 @@ const FromFillUp = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const { college_name, college_image, _id } = location.state;
+    const {
+      college_name,
+      college_image,
+      _id,
+      admission_dates,
+      admission_process,
+    } = location.state;
     const fromData = {
       ...data,
       college_name,
       college_image,
       college_id: _id,
       userId: findUser?._id,
+      admission_dates,
+      admission_process,
     };
     AdmissionColleges(fromData);
+    alert('clicked')
   };
   console.log(errors);
 

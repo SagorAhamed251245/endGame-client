@@ -1,20 +1,8 @@
 import SectionTitle from "../../components/SectionTitle";
 import { GetAdmittedColleges, ReviewColleges } from "../../api/admitionApi";
-import CollegesApi from "../../api/collegesApi";
-import { useEffect, useState } from "react";
 
 const MyCollege = () => {
   const [AdmittedColleges] = GetAdmittedColleges();
-  const [filterCollege, setFilterCollege] = useState([]);
-
-  const [AllColleges] = CollegesApi();
-
-  useEffect(() => {
-    const filteredArray = AllColleges.filter((item1) =>
-      AdmittedColleges.some((item2) => item2.college_id === item1._id)
-    );
-    setFilterCollege(filteredArray);
-  }, [AllColleges, AdmittedColleges]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
