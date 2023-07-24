@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useForm } from "react-hook-form";
+import { SetUser } from "../../api/userApi";
 
 const Register = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -13,30 +13,36 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const { createUser, setUserProfile, singinWithGoogle } =
+  const { createUser, setUserProfile, singinWithGoogle , createUserWithGithub} =
     useContext(AuthContext);
 
   const onSubmit = (data) => {
     const { name, email, password, photo } = data;
-    
-      createUser(email, password)
-        .then((result) => {
-          ;
-          setUserProfile(name, photo);
-          navigate("/")
-        
-        })
-        .catch((error) => {
-          console.log(error.message);
-        });
-    
+
+    createUser(email, password)
+      .then((result) => {
+        setUserProfile(name, photo);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   const handelGoogleSingin = () => {
     singinWithGoogle()
       .then((result) => {
+        SetUser(result.user)
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  const handelGithubSingin = () => {
+    createUserWithGithub()
+      .then((result) => {
+        SetUser(result.user);
         // setNewUser(result.user);
-        ;
       })
       .catch((error) => {
         console.log(error.message);
@@ -98,7 +104,7 @@ const Register = () => {
                     value: 6,
                     message: "Password must be at least 6 characters long",
                   },
-                 /*  pattern: {
+                  /*  pattern: {
                     value: /^(?=.*[A-Z])(?=.*[!@#$%^&*]).*$/,
                     message:
                       "Password must contain at least one capital letter and one special character (!@#$%^&*)",
@@ -115,7 +121,9 @@ const Register = () => {
               )}
             </div>
 
-            <button className="px-3 py-2 bg-sky-500 rounded font-bold mt-5 hover:bg-sky-400 hover:text-white duration-500">Sing Up</button>
+            <button className="px-3 py-2 bg-sky-500 rounded font-bold mt-5 hover:bg-sky-400 hover:text-white duration-500">
+              Sing Up
+            </button>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
               Have an account?{" "}
               <Link
@@ -132,6 +140,14 @@ const Register = () => {
               className="w-full text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
             >
               SingUp With Google
+            </button>
+          </div>
+          <div className=" mb-1 w-10/12 mx-auto">
+            <button
+              onClick={handelGithubSingin}
+              className="w-full text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
+            >
+              SingUp With Github
             </button>
           </div>
         </div>

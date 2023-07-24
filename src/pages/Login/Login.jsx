@@ -13,14 +13,14 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const { singInUser, singinWithGoogle } = useContext(AuthContext);
+  const { singInUser, singinWithGoogle, createUserWithGithub } =
+    useContext(AuthContext);
 
   const onSubmit = (data) => {
     const { email, password } = data;
 
     singInUser(email, password)
       .then((result) => {
-        ;
         SetUser(result.user);
         navigate("/");
       })
@@ -34,7 +34,16 @@ const Login = () => {
       .then((result) => {
         SetUser(result.user);
         // setNewUser(result.user);
-       ;
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  const handelGithubSingin = () => {
+    createUserWithGithub()
+      .then((result) => {
+        SetUser(result.user);
+        // setNewUser(result.user);
       })
       .catch((error) => {
         console.log(error.message);
@@ -111,7 +120,15 @@ const Login = () => {
               Login With Google
             </button>
           </div>
-          <Link to='/resetPass'>Reset Password</Link>
+          <div className=" mb-1 w-10/12 mx-auto">
+            <button
+              onClick={handelGithubSingin}
+              className="w-full text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
+            >
+              Login With Github
+            </button>
+          </div>
+          <Link to="/resetPass">Reset Password</Link>
         </div>
       </div>
     </>

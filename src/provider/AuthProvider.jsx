@@ -10,6 +10,7 @@ import {
   signOut,
   updateEmail,
   sendPasswordResetEmail,
+  GithubAuthProvider,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -23,6 +24,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider =  new GithubAuthProvider()
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -56,6 +58,9 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
+  const createUserWithGithub = () => {
+    return signInWithPopup(auth, githubProvider)
+ }
   const forgerPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
     /* .then(() => {
@@ -100,6 +105,7 @@ const AuthProvider = ({ children }) => {
     loading,
     singinWithGoogle,
     forgerPassword,
+    createUserWithGithub
   };
 
   return (
