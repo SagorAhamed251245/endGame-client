@@ -111,6 +111,7 @@ const Login = () => {
               Login With Google
             </button>
           </div>
+          <Link to='/resetPass'>Reset Password</Link>
         </div>
       </div>
     </>

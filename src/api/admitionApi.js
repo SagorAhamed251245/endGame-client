@@ -26,3 +26,16 @@ export const GetAdmittedColleges = () => {
   console.log(AdmittedColleges);
   return [AdmittedColleges, user];
 };
+
+export const GetReviewColleges = () => {
+  const { user } = useContext(AuthContext);
+  const [reviewColleges, setReviewColleges] = useState([]);
+
+  useEffect(() => {
+    axios(`${import.meta.env.VITE_apiUrl}/admitted`)
+      .then((response) => setReviewColleges(response.data))
+      .catch((err) => console.log(err));
+  }, [user?.email]);
+  console.log(reviewColleges);
+  return [reviewColleges, user];
+};

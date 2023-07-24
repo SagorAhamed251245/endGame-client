@@ -10,6 +10,7 @@ import Login from "../pages/Login/Login";
 import FromFillUp from "../pages/Admission/FromFillUp/FromFillUp";
 import Profile from "../pages/profile/Profile";
 import UpdatedProfile from "../pages/profile/UpdatedProfile";
+import ForgetPass from "../pages/ForgetPass/ForgetPass";
 
 export const router = createBrowserRouter([
   {
@@ -64,4 +65,10 @@ export const router = createBrowserRouter([
     path: "/login",
     element: <Login></Login>,
   },
+  {
+    
+      path: "/resetPass",
+      element: <ForgetPass></ForgetPass>,
+    
+  }
 ]);

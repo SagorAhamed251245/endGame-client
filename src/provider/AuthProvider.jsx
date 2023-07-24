@@ -9,7 +9,7 @@ import {
   signInWithPopup,
   signOut,
   updateEmail,
- 
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -35,15 +35,17 @@ const AuthProvider = ({ children }) => {
       photoURL: photo,
     });
   };
-  
+
   const UpdatedUserEmail = (email) => {
-    updateEmail(auth.currentUser, email).then(() => {
-      // Email updated!
-      // ...
-    }).catch((error) => {
-      // An error occurred
-      // ...
-    });
+    updateEmail(auth.currentUser, email)
+      .then(() => {
+        // Email updated!
+        // ...
+      })
+      .catch((error) => {
+        // An error occurred
+        // ...
+      });
   };
   const singInUser = (email, password) => {
     setLoading(true);
@@ -54,6 +56,19 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
+  const forgerPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+    /* .then(() => {
+    // Password reset email sent!
+    // ..
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  }); */
+  };
+
   const logOut = () => {
     setLoading(true);
     localStorage.removeItem("access-token");
@@ -79,6 +94,7 @@ const AuthProvider = ({ children }) => {
     UpdatedUserEmail,
     loading,
     singinWithGoogle,
+    forgerPassword,
   };
 
   return (
