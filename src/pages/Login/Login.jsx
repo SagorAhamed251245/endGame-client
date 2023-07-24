@@ -33,6 +33,7 @@ const Login = () => {
     singinWithGoogle()
       .then((result) => {
         SetUser(result.user);
+        navigate("/")
         // setNewUser(result.user);
       })
       .catch((error) => {
@@ -43,6 +44,7 @@ const Login = () => {
     createUserWithGithub()
       .then((result) => {
         SetUser(result.user);
+        navigate("/")
         // setNewUser(result.user);
       })
       .catch((error) => {

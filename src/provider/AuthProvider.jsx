@@ -8,7 +8,6 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
-  updateEmail,
   sendPasswordResetEmail,
   GithubAuthProvider,
 } from "firebase/auth";
@@ -24,7 +23,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
-  const githubProvider =  new GithubAuthProvider()
+  const githubProvider = new GithubAuthProvider();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -38,29 +37,20 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  const UpdatedUserEmail = (email) => {
-    updateEmail(auth.currentUser, email)
-      .then(() => {
-        // Email updated!
-        // ...
-      })
-      .catch((error) => {
-        // An error occurred
-        // ...
-      });
-  };
   const singInUser = (email, password) => {
     setLoading(true);
 
     return signInWithEmailAndPassword(auth, email, password);
   };
+
   const singinWithGoogle = () => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
   const createUserWithGithub = () => {
-    return signInWithPopup(auth, githubProvider)
- }
+    setLoading(true);
+    return signInWithPopup(auth, githubProvider);
+  };
   const forgerPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
     /* .then(() => {
@@ -82,12 +72,9 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
-      
-      setUser(loggedUser)
-      
-        setLoading(false)
-      
-      
+      setUser(loggedUser);
+
+      setLoading(false);
     });
 
     return () => {
@@ -101,11 +88,10 @@ const AuthProvider = ({ children }) => {
     singInUser,
     logOut,
     setUserProfile,
-    UpdatedUserEmail,
     loading,
     singinWithGoogle,
     forgerPassword,
-    createUserWithGithub
+    createUserWithGithub,
   };
 
   return (

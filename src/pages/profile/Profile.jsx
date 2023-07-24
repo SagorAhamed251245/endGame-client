@@ -4,6 +4,8 @@ import SectionTitle from "../../components/SectionTitle";
 
 const Profile = () => {
  const  [findUser] = GetUser();
+ console.log("🚀 ~ file: Profile.jsx:7 ~ Profile ~ findUser:", findUser)
+ 
   return (
     <>
       <SectionTitle>MY Profile</SectionTitle>
