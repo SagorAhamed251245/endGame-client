@@ -51,8 +51,8 @@ const FromFillUp = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="candidate_name"
             type="text"
-            placeholder={findUser?.user_name}
-            value={findUser?.user_name}
+            placeholder={findUser?.name}
+            value={findUser?.name}
             {...register("candidate_name", { required: true, maxLength: 80 })}
           />
         </div>

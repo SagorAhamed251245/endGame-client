@@ -47,7 +47,7 @@ const Navbar = () => {
             <NavLinks></NavLinks>
             <NavLink to="login"> Login</NavLink>
             <NavLink to="singup">Sing Up</NavLink>
-            <NavLink>{user?.displayName}</NavLink>
+            <NavLink to={"/profile"}>{user?.displayName}</NavLink>
             <NavLink onClick={() => logOut()}>Log out</NavLink>
           </div>
         </div>

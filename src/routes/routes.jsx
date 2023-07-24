@@ -8,6 +8,9 @@ import CollegesDetails from "../pages/Home/CollegeCard/CollegesDetails/CollegesD
 import Register from "../pages/Singup/Register";
 import Login from "../pages/Login/Login";
 import FromFillUp from "../pages/Admission/FromFillUp/FromFillUp";
+import Profile from "../pages/profile/Profile";
+import UpdatedProfile from "../pages/profile/UpdatedProfile";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -22,10 +25,10 @@ export const router = createBrowserRouter([
         element: <Colleges></Colleges>,
       },
       {
-        path: '/college/:id',
+        path: "/college/:id",
         element: <CollegesDetails></CollegesDetails>,
-        loader: ({params}) => fetch(`${import.meta.env.VITE_apiUrl}/college/${params.id}`)
-
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_apiUrl}/college/${params.id}`),
       },
       {
         path: "/admission",
@@ -33,7 +36,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admission/fromfillup",
-        element: <FromFillUp></FromFillUp>
+        element: <FromFillUp></FromFillUp>,
       },
       {
         path: "/myCollege",
@@ -41,17 +44,24 @@ export const router = createBrowserRouter([
       },
       {
         path: "/college/:id",
-        element: <CollegesDetails></CollegesDetails>
-      }
+        element: <CollegesDetails></CollegesDetails>,
+      },
+      {
+        path: "/profile",
+        element: <Profile></Profile>,
+      },
+      {
+        path: "/editProfile",
+        element: <UpdatedProfile></UpdatedProfile>,
+      },
     ],
   },
   {
-    path: '/singup',
-    element: <Register></Register>
+    path: "/singup",
+    element: <Register></Register>,
   },
   {
-    path:"/login",
-    element: <Login></Login>
-
-  }
+    path: "/login",
+    element: <Login></Login>,
+  },
 ]);

@@ -8,6 +8,9 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
+  updateEmail,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -33,6 +36,32 @@ const AuthProvider = ({ children }) => {
       photoURL: photo,
     });
   };
+  
+  const UpdatedUserEmail = async (email, password) => {
+    try {
+      setLoading(true);
+  
+      // Get the currently authenticated user
+      const user = auth.currentUser;
+  
+      // Create a credential object with the user's current email and password
+      const credential = EmailAuthProvider.credential(user.email, password);
+  
+      // Reauthenticate the user with the credential
+      await user.reauthenticateWithCredential(credential);
+  
+      // Once the user is successfully reauthenticated, update their email
+      await updateEmail(user, email);
+  
+      setLoading(false);
+      console.log("Email updated successfully!");
+      // You can perform any additional actions after a successful update here.
+    } catch (error) {
+      console.error("Error updating email:", error.message);
+      setLoading(false);
+      // Handle the error here (e.g., showing an error message to the user).
+    }
+  };
   const singInUser = (email, password) => {
     setLoading(true);
 
@@ -51,7 +80,6 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
       setUser(loggedUser);
-      
     });
 
     return () => {
@@ -65,6 +93,7 @@ const AuthProvider = ({ children }) => {
     singInUser,
     logOut,
     setUserProfile,
+    UpdatedUserEmail,
     loading,
     singinWithGoogle,
   };
