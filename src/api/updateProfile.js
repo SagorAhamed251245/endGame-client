@@ -7,6 +7,7 @@ import axios from "axios";
 const useUpdateUser = () => {
   const { user } = useContext(AuthContext);
 
+
   const updateUser = (info) => {
     // Make sure you have the necessary data before making the API request
     if (user?.email) {

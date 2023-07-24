@@ -33,7 +33,7 @@ const UpdatedProfile = () => {
     };
     setUserProfile(name, image);
 
-    // UpdatedUserEmail(email, password)
+    UpdatedUserEmail(email)
     updateUser(submitInfo)
     alert("Profile update successful");
   };

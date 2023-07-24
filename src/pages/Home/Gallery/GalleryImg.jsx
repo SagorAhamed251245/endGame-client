@@ -4,7 +4,7 @@ const GalleryImg = ({index}) => {
   const [galleryPhotos, setGalleryPhotos] = useState([]);
 
   useEffect(() => {
-    fetch("https://mah-heros-server.vercel.app/galleryPhotos")
+    fetch("gallereyimg.json")
       .then((res) => res.json())
       .then((data) => setGalleryPhotos(data));
   }, [galleryPhotos]);
